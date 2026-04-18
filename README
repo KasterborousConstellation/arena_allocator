@@ -14,3 +14,6 @@ This is a simple implementation of a tree allocator. It is a binary tree where e
 ## Usage
 **This is a single-header library**:
 To use the allocator, include the header file and define `KTBS_ALLOCATOR_IMPLEMENTATION` in one of your source files before including the header. Then you can create an allocator and use it to allocate and free memory.
+
+## Purpose 
+This allocator will be used a building block for dynamic arrays.
