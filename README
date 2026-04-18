@@ -1,0 +1,16 @@
+# Tree Allocator
+This is a simple implementation of a tree allocator. It is a binary tree where each node represents a block of memory. The left child of a node represents the left half of the block, and the right child represents the right half. The allocator keeps track of which blocks are occupied and which are free.
+
+## Trade-offs
+### Advantages
+- The main advantage of this allocator is that it can efficiently allocate and free memory in a way that minimizes fragmentation\*. 
+- For large allocations, the allocator can quickly find a suitable block by traversing the tree, which can be faster than other allocators that use a linear search.
+
+\* No fragramentation but wasted space can go up to 50% of the allocated block size.
+### Disadvantages
+- However, it can be slower than other allocators for small allocations due to the overhead of traversing the tree.
+- The wasted space can be significant if the allocated blocks are not powers of two, as the allocator rounds up to the nearest power of two.
+
+## Usage
+**This is a single-header library**:
+To use the allocator, include the header file and define `KTBS_ALLOCATOR_IMPLEMENTATION` in one of your source files before including the header. Then you can create an allocator and use it to allocate and free memory.
